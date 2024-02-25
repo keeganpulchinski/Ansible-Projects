@@ -1,0 +1,51 @@
+[routers]
+R1 ansible_host=192.168.110.1
+
+[routers:vars]
+ansible_network_os=cisco.ios.ios
+ansible_user=admin
+ansible_password=Pa$$w0rd
+ansible_connection=network_cli
+ansible_become=yes
+ansible_become_method=enable
+ansible_become_pass=Pa$$w0rd
+ansible_python_interpreter=usr/local/bin/python3
+
+[switches]
+SW1 ansible_host=192.168.110.2
+
+[switches:vars]
+ansible_network_os=cisco.ios.ios
+ansible_user=admin
+ansible_password=Pa$$w0rd
+ansible_connection=network_cli
+ansible_become=yes
+ansible_become_method=enable
+ansible_become_pass=Pa$$w0rd
+ansible_python_interpreter=usr/local/bin/python3
+
+[wlcs]
+WLC1 ansible_host=192.168.110.3
+
+[wlcs:vars]
+ansible_connection=network_cli
+ansible_network_os=ios
+ansible_user=admin
+ansible_password=Pa$$word
+ansible_become=yes
+
+[asas]
+a1 ansible_host=192.168.120.2
+
+[asas:vars]
+ansible_network_os=cisco.asa.asa
+ansible_user=admin
+ansible_password=Pa$$w0rd
+ansible_connection=network_cli
+ansible_become=yes
+ansible_become_method= enable
+ansible_become_pass=Pa$$w0rd
+ansible_python_interpreter=usr/local/bin/python3
+
+[all:vars]
+ansible_port=22
