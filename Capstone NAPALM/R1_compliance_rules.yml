@@ -1,0 +1,38 @@
+---
+
+- get_facts:
+    model: CISCO1921/K9
+    serial_number: FGL224030FM
+    hostname: R1
+    interface_list:
+      list:
+        - GigabitEthernet0/0
+        - GigabitEthernet0/0.10
+        - GigabitEthernet0/0.20
+        - GigabitEthernet0/0.110
+        - GigabitEthernet0/0.120
+        - GigabitEthernet0/0.130
+        - GigabitEthernet0/0.140
+        - GigabitEthernet0/1
+        - Serial0/0/0
+        - Serial0/0/1
+        - Embedded-Service-Engine0/0
+        - NVI0
+
+- get_interfaces_ip:
+      GigabitEthernet0/0.110:
+        ipv4:
+          192.168.110.1:
+            prefix_length: 24
+
+- get_interfaces:
+    GigabitEthernet0/0:
+      is_up: True
+    GigabitEthernet0/1:
+      is_up: True
+    GigabitEthernet0/0:
+      is_up: True
+    Serial0/0/0:
+      is_up: False
+    Serial0/0/1:
+      is_up: False
